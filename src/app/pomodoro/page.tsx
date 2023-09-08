@@ -1,10 +1,9 @@
 'use client'
-
 import React, { useEffect, useState } from "react";
-
+import {alarm} from './ringtone.mp3'
 export default function Pomodoro() {
   const [pomodoroTimer, setPomodoroTimer] = useState(1500); // 25 minutes in seconds
-  const [breakTimer, setBreakTimer] = useState(300); // 5 minutes in seconds
+  const [breakTimer, setBreakTimer] = useState(3); // 5 minutes in seconds
   const [mode, setMode] = useState('Pomodoro');
   const [pomodoroCounter, setPomodoroCounter] = useState(1);
   const [breakCounter, setBreakCounter] = useState(1);
@@ -46,6 +45,7 @@ export default function Pomodoro() {
   }
 
   function handleTimerCompletion() {
+    new Audio(alarm).play
     alert('Your time is ready');
     setIsTimerRunning(false);
 
@@ -59,6 +59,9 @@ export default function Pomodoro() {
       setMode('Pomodoro');
     }
   }
+
+
+  
 
   return (
     <div className={`flex flex-col justify-center items-center ${mode === 'Pomodoro' ? 'bg-[#ED254E]' : 'bg-[#219ebc]'} w-full h-screen duration-1000`}>

@@ -7,6 +7,16 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+:root {
+  --blue-500: #3490dc;
+  --red-500: #e3342f;
+  --yellow-500: #e3e02f;
+  --green-500: #2fe32f;
+  --purple-500: #e32fdd;
+  --orange-500: #e3952f;
+  --pink-500: #e32f77;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

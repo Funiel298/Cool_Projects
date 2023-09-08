@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/calculator/page.jsx", "src/app/weather/page.tsx", "src/app/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/calculator/page.jsx", "src/app/weather/page.tsx", "src/app/page.jsx", "src/app/pomodoro/page.tsx"],
   "exclude": ["node_modules"]
 }
