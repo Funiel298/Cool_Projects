@@ -117,41 +117,30 @@ export default function Calculator() {
         <div className=' flex flex-row  justify-between w-full '>
           
           <div className="w-1/2 flex flex-col text-2xl items-center">
-            <div className='mt-5 mb-5 justify-between flex flex-row '>
-              <button className='p-10 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(1)}>1</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(2)}>2</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(3)}>3</button>
-            </div>
+            {Array.from({ length: 4 }, (_, row) => (
+              <div key={row} className="mt-5 mb-5 flex flex-row">
+                {Array.from({ length: 3 }, (_, col) => {
+                  const digit = row * 3 + col + 1;
+                  const buttonText = digit === 10 ? 'C' : digit === 11 ? '0' : digit === 12 ? '=' : digit.toString();
+                  const onClickHandler = digit === 10 ? cleaner : digit === 12 ? equalizer : () => handleDigitClick(digit);
 
-            <div className='mt-5 mb-5 flex flex-row '>
-              <button className='p-10 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(4)}>4</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(5)}>5</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(6)}>6</button>
-            </div>
-            
-            <div className=' mt-5 mb-5 flex flex-row '>
-              <button className='p-10 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(7)}>7</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(8)}>8</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(9)}>9</button>
-            </div>
-            
-            <div className='mt-5 mb-5 flex flex-row '>
-              <button className='p-10 rounded-2xl text-5xl  bg-cyan-600' onClick={() => cleaner()}>C</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => handleDigitClick(0)}>0</button>
-              <button className='p-10 ml-5 rounded-2xl text-5xl  bg-cyan-600' onClick={() => equalizer()}>=</button>
-            </div>
+                  return (
+                    <button
+                      key={col}
+                      className={`p-8 ml-5 rounded-2xl text-5xl bg-cyan-600`}
+                      onClick={onClickHandler}
+                    >
+                      {buttonText}
+                    </button>
+                  );
+                })}
+              </div>
+            ))}
           </div>
-          <div className='flex flex-col text-2xl'>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('+')}>+</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('-')}>-</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('*')}>*</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('/')}>/</button>
-          </div>
-          <div className='flex flex-col text-2xl'>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('√')}>√</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('Tan')}>Tan</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('Cos')}>Cos</button>
-            <button className='p-10 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator('Sin')}>Sin</button>
+          <div className='grid grid-cols-2 gap-x-3 text-2xl'>
+            {['+','-',"*","/",'√','Tan','Cos','Sin'].map((sign)=>(
+              <button key={sign} className='p-8 rounded-2xl mt-5 mb-5 text-5xl  bg-cyan-900' onClick={() => getOperator(sign)}>{sign}</button>
+            ))}
           </div>
         </div>
         

@@ -29,13 +29,13 @@ export default function Card(props: any) {
 
   return (
     <div className="flex flex-col items-center justify-center p-3 m-5 rounded-2xl w-72 h-auto bg-white shadow-2xl shadow-gray-500">
+      <h1 className="font-bold text-2xl my-2">{props.name}</h1>
       {props.image ? <Image alt="image" src={props.image} width={300} height={200} className="rounded-xl object-cover" /> : null}
       <div>
-        <h1 className="font-bold text-2xl my-2">{props.name}</h1>
         <span className={`rounded-xl p-2 text-sm font-semibold text-white  ${getBackgroundColor()}`}>{props.importance}</span>
         <div className="flex flex-row items-center my-2">
           <AiOutlineTag className='text-2xl' />
-          <div className="flex flex-wrap flex-row items-center ">
+          <div className="flex flex-wrap flex-row ">
             {props.tags.map((tag: string, index: number) => {
               const colorIndex = index % colors.length;
               const bgColor = colors[colorIndex];
