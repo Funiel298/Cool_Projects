@@ -1,16 +1,19 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import {alarm} from './ringtone.mp3'
+import { motion } from "framer-motion";
+import { alarm } from '../../../public/ringtone.mp3';
+
 export default function Pomodoro() {
   const [pomodoroTimer, setPomodoroTimer] = useState(1500); // 25 minutes in seconds
-  const [breakTimer, setBreakTimer] = useState(3); // 5 minutes in seconds
+  const [breakTimer, setBreakTimer] = useState(300); // 5 minutes in seconds
   const [mode, setMode] = useState('Pomodoro');
   const [pomodoroCounter, setPomodoroCounter] = useState(1);
   const [breakCounter, setBreakCounter] = useState(1);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(true);
 
   useEffect(() => {
-    let interval : any;
+    let interval:any;
     if (isTimerRunning) {
       interval = setInterval(() => {
         if (mode === 'Pomodoro') {
@@ -45,7 +48,7 @@ export default function Pomodoro() {
   }
 
   function handleTimerCompletion() {
-    new Audio(alarm).play
+    new Audio(alarm).play();
     alert('Your time is ready');
     setIsTimerRunning(false);
 
@@ -60,24 +63,36 @@ export default function Pomodoro() {
     }
   }
 
-
-  
-
   return (
-    <div className={`flex flex-col justify-center items-center ${mode === 'Pomodoro' ? 'bg-[#ED254E]' : 'bg-[#219ebc]'} w-full h-screen duration-1000`}>
-      <div className="text-xl">
-        <button className={mode === 'Pomodoro' ? 'font-bold bg-red-700 p-3 rounded-xl' : 'font-medium p-3  rounded-xl'} onClick={() => setMode('Pomodoro')}>Pomodoro</button>
-        <button className={mode === 'Break' ? 'font-bold bg-sky-700 p-3 rounded-xl ml-1' : 'font-medium p-3 rounded-xl ml-1'} onClick={() => setMode('Break')}>Break</button>
-      </div>
-      <div className="bg-white p-10 m-3 rounded-2xl flex flex-col  items-center">
-        <h1 className="font-bold text-9xl"> {Math.floor(mode === 'Pomodoro' ? pomodoroTimer / 60 : breakTimer / 60) > 10 ? Math.floor(mode === 'Pomodoro' ? pomodoroTimer / 60 : breakTimer / 60) : '0' + (Math.floor(mode === 'Pomodoro' ? pomodoroTimer / 60 : breakTimer / 60))} : {Math.ceil(mode === 'Pomodoro' ? pomodoroTimer % 60 : breakTimer % 60) > 10 ? Math.ceil(mode === 'Pomodoro' ? pomodoroTimer % 60 : breakTimer % 60) : '0' + (mode === 'Pomodoro' ? pomodoroTimer % 60 : breakTimer % 60)} </h1>
-        <div className="flex flex-row ">
-          <button className="bg-gray-200 rounded-xl p-3 font-medium text-xl" onClick={handleStart}>Start</button>
-          <button className={isTimerRunning ? 'visible`bg-gray-200 rounded-xl p-3 font-medium text-xl' : 'hidden' + 'bg-gray-200 rounded-xl p-3 font-medium text-xl'} onClick={handleStop}>Stop</button>
-          <img src="https://img.icons8.com/?size=512&id=11676&format=png" width={50} alt=" restart" onClick={()=>{setBreakTimer(300); setPomodoroTimer(1500); handleStop()}} className="bg-gray-200 rounded-xl p-3 font-medium text-xl cursor-pointer" />
+    <div className="flex h-screen">
+      {isMenuVisible && (
+        <div className="bg-gray-800 text-white w-1/4 h-full p-4">
+          <h2 className="text-2xl font-bold mb-4">Pomodoro Timer</h2>
+          <div className="flex flex-col items-center mb-4">
+            <h1 className="font-bold text-4xl">
+              {Math.floor(mode === 'Pomodoro' ? pomodoroTimer / 60 : breakTimer / 60)}:
+              {Math.ceil(mode === 'Pomodoro' ? pomodoroTimer % 60 : breakTimer % 60)
+                .toString()
+                .padStart(2, '0')}
+            </h1>
+            <p>{mode === 'Pomodoro' ? 'Work Time' : 'Break Time'}</p>
+          </div>
+          <div className="flex flex-row space-x-4">
+            <button className="bg-green-500 text-white px-3 py-1 rounded" onClick={handleStart}>
+              Start
+            </button>
+            <button className="bg-red-500 text-white px-3 py-1 rounded" onClick={handleStop}>
+              Stop
+            </button>
+          </div>
         </div>
-        <h6 className="mt-2 text-center font-medium">{mode === 'Pomodoro' ? pomodoroCounter : breakCounter} {pomodoroCounter > 1 && mode === 'Pomodoro' ? 'Sets' : 'Set'}</h6>
-        {mode === 'Pomodoro' ? <span>Let's Focus</span> : <span>Take a Break</span>}
+      )}
+      <div className="flex-1 overflow-hidden">
+        <motion.div
+          className="h-full bg-cover bg-center"
+          style={{ backgroundImage: "url(https://wallpaperxyz.com/wp-content/uploads/Gif-Animated-Wallpaper-Background-Full-HD-Free-Download-for-PC-Macbook-261121-Wallpaperxyz.com-20.gif)" }}
+        >
+        </motion.div>
       </div>
     </div>
   );

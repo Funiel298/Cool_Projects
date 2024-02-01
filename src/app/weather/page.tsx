@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from "react";
-import SearchCity from "./components/SearchCity";
-import EmptyPage from './components/EmptyPage'
-import GeneralInfo from "./components/GeneralInfo";
-import DailyWeather from "./components/DailyWeather";
-import WeatherMap from "./components/WeatherMap";
-import { useWeatherData } from './components/useWeatherData'
+import SearchCity from "../../Components/WeatherComponents/SearchCity";
+import EmptyPage from '../../Components/WeatherComponents/EmptyPage'
+import GeneralInfo from "../../Components/WeatherComponents/GeneralInfo";
+import DailyWeather from "../../Components/WeatherComponents/DailyWeather";
+import WeatherMap from "../../Components/WeatherComponents/WeatherMap";
+import { useWeatherData } from '../../Components/WeatherComponents/useWeatherData'
 
 //exports boring APIs
 
