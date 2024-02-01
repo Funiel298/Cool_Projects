@@ -1,4 +1,3 @@
-// GetDaysWeather.js
 const apiKey = "48630635ebc31aba2f59c952b5672565"; 
 
 export default async function GetDaysWeather(city: any) {
