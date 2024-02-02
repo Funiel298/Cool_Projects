@@ -1,5 +1,5 @@
 'use client'
-import Clock from "../Components/Clock";
+import Clock from "../Components/Clock" 
 import BottomPanel from '../Components/BottomPanel'
 
 export default function Home() {
@@ -10,5 +10,5 @@ export default function Home() {
         <BottomPanel/>
       </div>
     </div>
-  );
+  ) 
 }

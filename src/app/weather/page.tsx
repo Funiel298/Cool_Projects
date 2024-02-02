@@ -1,14 +1,15 @@
 'use client'
-import React, { useEffect, useState } from "react";
-import SearchCity from "../../Components/WeatherComponents/SearchCity";
-import EmptyPage from "../../Components/WeatherComponents/EmptyPage";
-import GeneralInfo from "../../Components/WeatherComponents/GeneralInfo";
-import DailyWeather from "../../Components/WeatherComponents/DailyWeather";
-import WeatherMap from "../../Components/WeatherComponents/WeatherMap";
+import React, { useEffect, useState } from "react" 
+import SearchCity from "../../Components/WeatherComponents/SearchCity" 
+import EmptyPage from "../../Components/WeatherComponents/EmptyPage" 
+import GeneralInfo from "../../Components/WeatherComponents/GeneralInfo" 
+import DailyWeather from "../../Components/WeatherComponents/DailyWeather" 
+import WeatherMap from "../../Components/WeatherComponents/WeatherMap" 
 import useWeatherData from '../../Components/WeatherComponents/useWeatherData'
 
 export default function Weather(){
-    const { data, days, getStates } = useWeatherData(city);
+    const [city, setCity] = useState<string>('');
+    const { data, days, getStates } = useWeatherData('Almaty') 
 
     const arr: any[] = [
         [
@@ -45,7 +46,7 @@ export default function Weather(){
             arr: Math.round(data?.main?.temp_min - 273) + ' °C',
         },
         ],
-    ];
+    ] 
     
     const miniArr: any[] = [
         {
@@ -60,7 +61,7 @@ export default function Weather(){
         image: 'https://img.icons8.com/?size=512&id=9260&format=png',
         title: Math.round(data?.main?.temp_min - 273) + '°C',
         },
-    ];
+    ] 
     const months = [
         "",
         "January",
@@ -75,23 +76,23 @@ export default function Weather(){
         "October",
         "November",
         "December",
-    ];
+    ] 
 
     return (
         <div className="flex flex-col bg-[#0f0f12] justify-center items-center">
-          <SearchCity city={city} setCity={setCity} getStates={getStates} />
+            <SearchCity city={city} setCity={setCity} getStates={getStates} />
     
-          {!data || !data.main ? (
+            {!data || !data.main ? (
             <EmptyPage />
-          ) : (
+            ) : (
             <>
-              <GeneralInfo data={data} arr={arr} />
+                <GeneralInfo data={data} arr={arr} />
     
-              <DailyWeather days={days} miniArr={miniArr} months={months} />
+                <DailyWeather days={days} miniArr={miniArr} months={months} />
     
-              <WeatherMap data={data} />
+                <WeatherMap data={data} />
             </>
-          )}
+            )}
         </div>
-      );
+      ) 
 }

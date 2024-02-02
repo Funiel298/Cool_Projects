@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Card from "./card"
 import List from "./list"
-export default function Todo(){
+export default function list(){
 
     const cards = [
         {

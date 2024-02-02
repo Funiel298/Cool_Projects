@@ -1,14 +1,14 @@
 'use client'
 // pages/index.tsx
-import React, { useState } from 'react';
+import React, { useState } from 'react' 
 
 const randomSentences = [
   "The quick brown fox jumps over the lazy dog.",
   "A journey of a thousand miles begins with a single step.",
   // Add more sentences
-];
+] 
 
-const Home: React.FC = () => {
+export default function Home(){
   
     
 
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         <p>Words Per Minute: {}</p>
       </div>
     </div>
-  );
-};
+  ) 
+} 
 
-export default Home;
+

@@ -1,12 +1,12 @@
 // components/LetterDisplay.tsx
-import React from 'react';
+import React from 'react' 
 
 interface LetterDisplayProps {
-  text: string;
+  text: string 
 }
 
 const LetterDisplay: React.FC<LetterDisplayProps> = ({ text }) => {
-  return <div className="text-xl font-medium mb-6">{text}</div>;
-};
+  return <div className="text-xl font-medium mb-6">{text}</div> 
+} 
 
-export default LetterDisplay;
+export default LetterDisplay 

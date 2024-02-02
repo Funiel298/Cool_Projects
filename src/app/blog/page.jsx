@@ -1,6 +1,6 @@
 'use client'
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react' 
+import { motion, AnimatePresence } from 'framer-motion' 
 
 const App = () => {
   
@@ -11,7 +11,7 @@ const App = () => {
         pic: 'https://img.freepik.com/free-photo/japan-street-daytime_23-2148942935.jpg?size=626&ext=jpg&ga=GA1.1.1225704836.1691402271&semt=sph',
         description: `The New York metropolitan area is home to the largest and most prominent ethnic Chinese population outside of Asia, hosting Chinese populations representing all 34 provincial-level administrative units of China.[1][2] The Chinese American population of the New York City metropolitan area was an estimated 893,697 as of 2017, constituting the largest and most prominent metropolitan Asian national diaspora outside Asia.[3] New York City itself contains by far the highest ethnic Chinese population of any individual city outside Asia, estimated at 628,763 as of 2017.[4]
 
-        New York City and its surrounding metropolitan area, including Long Island and parts of New Jersey, is home to 12 Chinatowns, early U.S. racial ghettos where Chinese immigrants were made to live for economic survival and physical safety[5] that are now known as important sites of tourism and urban economic activity. Six Chinatowns[6] (or nine,[7] New York including the emerging Chinatowns in Elmhurst and Whitestone, Queens,[8] and East Harlem, Manhattan) are located in New York City proper, and one each is located in Nassau County, Long Island; Edison, New Jersey;[8] West Windsor, New Jersey; and Parsippany-Troy Hills, New Jersey. This excludes fledgling ethnic Chinese enclaves emerging throughout the New York metropolitan area, such as Jersey City, New Jersey; China City of America in Sullivan County, New York; and Dragon Springs (in Deerpark, Orange County, New York), which serves as the de facto headquarters for both the global Falun Gong New religious movement as well as its Shen Yun performance arts troupe.`,
+        New York City and its surrounding metropolitan area, including Long Island and parts of New Jersey, is home to 12 Chinatowns, early U.S. racial ghettos where Chinese immigrants were made to live for economic survival and physical safety[5] that are now known as important sites of tourism and urban economic activity. Six Chinatowns[6] (or nine,[7] New York including the emerging Chinatowns in Elmhurst and Whitestone, Queens,[8] and East Harlem, Manhattan) are located in New York City proper, and one each is located in Nassau County, Long Island  Edison, New Jersey [8] West Windsor, New Jersey  and Parsippany-Troy Hills, New Jersey. This excludes fledgling ethnic Chinese enclaves emerging throughout the New York metropolitan area, such as Jersey City, New Jersey  China City of America in Sullivan County, New York  and Dragon Springs (in Deerpark, Orange County, New York), which serves as the de facto headquarters for both the global Falun Gong New religious movement as well as its Shen Yun performance arts troupe.`,
         },
         {
         id: '2',
@@ -136,50 +136,50 @@ const App = () => {
             pic: 'https://qph.cf2.quoracdn.net/main-qimg-907c1d816364be2d02b66a02680664ee-lq',
             description: `In 1898, the smartest man who ever lived was born in America. His name was William James Sidis and his IQ was eventually estimated to be between 250 and 300 (with 100 being the norm). His parents, Boris and Sarah, were pretty intelligent themselves. Boris was a famed psychologist while Sarah was a doctor.`,
         },
-    ];
+    ] 
 
-    const [selectedId, setSelectedId] = useState('');
-    const [addItemMode, setAddItemMode] = useState(false);
-    const [nameInput, setNameInput] = useState('');
-    const [picInput, setpicInput] = useState('');
-    const [descriptionInput, setDescriptionInput] = useState('');
-    const [filteredItems, setFilteredItems] = useState(items1);
-    const [items, setItems] = useState(items1);
+    const [selectedId, setSelectedId] = useState('') 
+    const [addItemMode, setAddItemMode] = useState(false) 
+    const [nameInput, setNameInput] = useState('') 
+    const [picInput, setpicInput] = useState('') 
+    const [descriptionInput, setDescriptionInput] = useState('') 
+    const [filteredItems, setFilteredItems] = useState(items1) 
+    const [items, setItems] = useState(items1) 
     
     const handleAddItemClick = () => {
-        console.log("Add button clicked");
-        setAddItemMode(true);
-        setNameInput('');
-        setpicInput('');
-        setDescriptionInput('');
-    };
+        console.log("Add button clicked") 
+        setAddItemMode(true) 
+        setNameInput('') 
+        setpicInput('') 
+        setDescriptionInput('') 
+    } 
 
     const handleAddItem = () => {
-        console.log("Add item button clicked");
+        console.log("Add item button clicked") 
         if (nameInput && picInput && descriptionInput) {
             const newItem = {
               id: String(items.length + 1),
               title: nameInput,
               pic: picInput,
               description: descriptionInput,
-            };
-            setItems([...items, newItem]);
-            setFilteredItems([...items, newItem]); // Update filtered items as well
+            } 
+            setItems([...items, newItem]) 
+            setFilteredItems([...items, newItem])  // Update filtered items as well
         }
-        setAddItemMode(false);
-    };
+        setAddItemMode(false) 
+    } 
 
     const handleSearchChange = (event) => {
-        const searchTerm = event.target.value.toLowerCase();
+        const searchTerm = event.target.value.toLowerCase() 
         if (searchTerm === '') {
-          setFilteredItems(items); // Reset filtered items when the search term is empty
+          setFilteredItems(items)  // Reset filtered items when the search term is empty
         } else {
           const filtered = items.filter((item) =>
             item.title.toLowerCase().includes(searchTerm)
-          );
-          setFilteredItems(filtered);
+          ) 
+          setFilteredItems(filtered) 
         }
-    };
+    } 
 
       
 
@@ -254,7 +254,7 @@ const App = () => {
                                 Close
                             </motion.button>
 
-                            <motion.img  src={item.pic} className=" mb-1 object-cover w-full object-cover " height={100} />
+                            <motion.img  src={item.pic} className=" mb-1 object-cover w-full  " height={100} />
                             <motion.h2 className="text-xl font-bold mb-2 text-blue-600 ">{item.title}</motion.h2>
                             
                             
@@ -323,7 +323,7 @@ const App = () => {
             </motion.div>
             )}
         </motion.div>
-    );
-};
+    ) 
+} 
 
-export default App;
+export default App 

@@ -1,8 +1,9 @@
-import Link from "next/link";
-import { CiTimer } from "react-icons/ci";
-import { CiCloud } from "react-icons/ci";
-import { CiCalculator2 } from "react-icons/ci";
-import { CiSettings } from "react-icons/ci";
+import Link from "next/link" 
+import { CiTimer } from "react-icons/ci" 
+import { CiCloud } from "react-icons/ci" 
+import { CiCalculator2 } from "react-icons/ci" 
+import { CiSettings } from "react-icons/ci" 
+import { MdNotes } from "react-icons/md" 
 
 
 
@@ -27,11 +28,11 @@ const apps = [
         icon : <CiSettings size={18}/>,
         link : ''
     },
-    // {
-    //     name : '', 
-    //     icon : ,
-    //     link : ''
-    // },
+    {
+        name : '', 
+        icon : <MdNotes/>,
+        link : ''
+    },
 ]
 
 export default function BottomPanel() {
@@ -43,5 +44,5 @@ export default function BottomPanel() {
         </Link>
       ))}
     </div>
-  );
+  ) 
 }
