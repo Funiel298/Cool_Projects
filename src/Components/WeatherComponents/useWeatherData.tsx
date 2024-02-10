@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react" 
+'use client'
+import { useEffect, useState } from "react" 
 import GetGeneralData from "@/Components/WeatherComponents/GetGeneralData" 
 import GetDaysWeather from "@/Components/WeatherComponents/GetDaysWeather" 
 
 interface WeatherData {
-  city: string
+  city: string 
   data: any 
   days: any[] 
-  getStates: () => void  
+  getStates: () => void 
 }
 
-export default function WeatherServer ({ city }:WeatherData){
+export default function useWeatherData(city: string){
   const [data, setData] = useState<any>({}) 
   const [days, setDays] = useState<any[]>([]) 
 
@@ -25,7 +26,8 @@ export default function WeatherServer ({ city }:WeatherData){
   } 
 
   useEffect(() => {
-    getStates() 
-  }, [city]) 
+    getStates()
+  }, [city])
+
   return { data, days, getStates }
-} 
+}
