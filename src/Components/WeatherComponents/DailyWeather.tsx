@@ -1,3 +1,4 @@
+'use client'
 export default function Daily({ days, miniArr, months }:any){
     return(
         <div className="p-10 justify-around text-[#e8e8e8]  items-center flex flex-row w-full">

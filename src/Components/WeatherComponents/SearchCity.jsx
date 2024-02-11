@@ -1,7 +1,13 @@
-import React from "react";
+'use client'
 import { CiSearch } from "react-icons/ci";
+import getStates from "@/Components/WeatherComponents/GetStates";
 
-export default async function({ city, setCity, getStates }){
+export default async function({ city, setCity }){
+
+  useEffect(() => {
+    getStates(city, setData, setDays);
+  }, [city]);
+
   return (
     <div className="absolute m-5 w-3/4 flex flex-row items-center justify-center">
       <div className="relative w-full">

@@ -1,4 +1,7 @@
 'use client'
+import { useEffect } from "react";
+import getStates from "./GetStates"
+
 export default function EmptyPage({city,setCity, getStates}:any){
     return(
         <div className="flex flex-col justify-center items-center">

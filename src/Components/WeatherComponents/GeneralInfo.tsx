@@ -1,3 +1,4 @@
+'use client'
 export default function GeneralInfo({ data, arr }:any){
     return(
         <div className="bg-gray-700 duration-500  v w-2/5 h-80 rounded-2xl flex flex-col justify-center items-center p-5 ">
