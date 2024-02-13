@@ -20,11 +20,4 @@ Welcome to the Cool Projects repository! This collection of applications is buil
 
 Feel free to explore the codebase, contribute, or utilize these applications for your needs. Thank you for checking out Cool Projects! 🚀
 
-<div align="center">
-  <a href="https://github.com/YourUsername/Cool_Projects/blob/master/LICENSE"><img src="https://img.shields.io/github/license/YourUsername/Cool_Projects.svg" alt="License"></a>
-  <a href="https://github.com/YourUsername/Cool_Projects/issues"><img src="https://img.shields.io/github/issues/YourUsername/Cool_Projects.svg" alt="Issues"></a>
-  <a href="https://github.com/YourUsername/Cool_Projects/stargazers"><img src="https://img.shields.io/github/stars/YourUsername/Cool_Projects.svg" alt="Stars"></a>
-  <a href="https://github.com/YourUsername/Cool_Projects/network"><img src="https://img.shields.io/github/forks/YourUsername/Cool_Projects.svg" alt="Forks"></a>
-</div>
-
 **Happy coding with Cool Projects!** 🎉
