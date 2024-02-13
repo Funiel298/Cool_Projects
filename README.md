@@ -1,5 +1,3 @@
-![image](https://github.com/Funiel298/Cool_Projects/assets/91716291/52008863-bf17-42ea-947c-a8369f104071)# Cool Projects
-
 Welcome to the Cool Projects repository! This collection of applications is built with TypeScript, React, and Next.js, aiming to provide you with versatile tools to enhance your productivity and daily life. 
 
 ![image](https://github.com/Funiel298/Cool_Projects/assets/91716291/5346ba5e-4e3a-4850-adfe-33d10eaecf79)
