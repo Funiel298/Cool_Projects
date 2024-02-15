@@ -6,18 +6,20 @@ Welcome to the Cool Projects repository! This collection of applications is buil
 ## Apps Included:
 
 1. **Calculator:**  
-   - A sleek and efficient calculator application designed to handle basic arithmetic operations with ease.
+   - A sleek and efficient calculator application designed to handle basic arithmetic operations with ease
 
 2. **Pomodoro Timer:**  
-   - Boost your productivity using the Pomodoro technique, with this timer that helps you focus during work or study sessions.
+   - Boost your productivity using the Pomodoro technique, with this timer that helps you focus during work or study sessions
 
 3. **Weather App:**  
-   - Stay informed about the weather conditions in your area with real-time updates on temperature, humidity, wind speed, and more.
+   - Stay informed about the weather conditions in your area with real-time updates on temperature, humidity, wind speed, and more
+  
+4. **Notes App:**  
+   - Organize your thoughts, ideas, and reminders effortlessly with the Nota app, offering a streamlined interface and customizable features for enhanced note-taking experiences
 
 ## Note:
-- This repository is continuously evolving with updates and improvements to enrich functionality, performance, and user experience.
+- This repository is continuously evolving with updates and improvements to enrich functionality, performance, and user experience
 - Contributions and feedback from the community are highly appreciated to make these applications even more exceptional!
 
 Feel free to explore the codebase, contribute, or utilize these applications for your needs. Thank you for checking out Cool Projects! 🚀
 
-**Happy coding with Cool Projects!** 🎉
