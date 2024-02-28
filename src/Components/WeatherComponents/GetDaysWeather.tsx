@@ -9,7 +9,7 @@ export default async function GetDaysWeather(city: any) {
     const result = await response.json();
     return result.list || [];
   } catch (error) {
-    console.error("Error fetching days weather data:", error);
-    return [];
+    console.error("Error fetching days weather data:", error)
+    return []
   }
 }
