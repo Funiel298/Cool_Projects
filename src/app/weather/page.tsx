@@ -147,17 +147,13 @@ export default function Weather() {
                 </h2>
               </div>
             )}
-            {data &&
-              data.weather &&
-              data.weather.map((data: any) => (
-                <img
+            <img
                   key={data.id}
-                  src={`https://openweathermap.org/img/wn/${data.icon}.png`}
+                  src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
                   width={200}
                   height={200}
                   alt="@" className="z-10"
-                />
-              ))}
+                />                      
           </div>
         </div>
 
