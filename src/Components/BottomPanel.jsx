@@ -4,7 +4,7 @@ import { CiCloud } from "react-icons/ci"
 import { CiCalculator2 } from "react-icons/ci" 
 import { CiSettings } from "react-icons/ci" 
 import { MdNotes } from "react-icons/md" 
-
+import { VscGithubAlt } from "react-icons/vsc";
 
 
 const apps = [
@@ -33,7 +33,14 @@ const apps = [
         icon : <MdNotes/>,
         link : ''
     },
+    {
+      name : '', 
+      icon : <VscGithubAlt/>,
+      link : 'github_readme'
+  },
 ]
+
+
 
 export default function BottomPanel() {
   return (
