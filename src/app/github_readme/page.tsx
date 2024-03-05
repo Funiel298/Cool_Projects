@@ -17,9 +17,17 @@ export default function Github(){
 
         text = text.replace(/\*(.*?)\*/g, '<i>$1</i>')
 
-        text = text.replace(/#(.*?)\n/g, '<h1 class=`font-bold text-2xl`>$1</h1>')
+        text = text.replace(/### (.*?)(?:\n|$)/g, (_, content) => {
+            return `<h3 style="font-weight: 600; font-size: 1.2rem;">${content}</h3>`;
+        })
 
-        
+        text = text.replace(/## (.*?)(?:\n|$)/g, (_, content) => {
+            return `<h2 style="font-weight: 600; font-size: 1.5rem;">${content}</h2>`;
+        })
+
+        text = text.replace(/# (.*?)(?:\n|$)/g, (_, content) => {
+            return `<h1 style="font-weight: 600; font-size: 2rem;">${content}</h1>`;
+        })
         text = text.replace(/\n/g, '<br>')
 
         return text
