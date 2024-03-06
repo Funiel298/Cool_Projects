@@ -11,34 +11,43 @@ export default function Github(){
 
     function TransformList(text:string){
         if (!text) return '';
-        text = text.replace(/-/g,'• ')
-
-        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-
-        text = text.replace(/\*(.*?)\*/g, '<i>$1</i>')
-
+        
+        text = text.replace(/(\n)-{3,}(\n|$)/g, (_, newline1, newline2) => {
+            return `${newline1}<div class="border-b border-gray-300 my-2"></div>${newline2}`
+        });
+    
+        text = text.replace(/(\n)- +/g, '$1•')
+    
+        text = text.replace(/(\*\*|__)(.*?)\1/g, '<strong>$2</strong>')
+        text = text.replace(/(\*|_)(.*?)\1/g, '<i>$2</i>');
+    
         text = text.replace(/### (.*?)(?:\n|$)/g, (_, content) => {
-            return `<h3 style="font-weight: 600; font-size: 1.2rem;">${content}</h3>`;
-        })
-
+            return `<h3 style="font-weight: 600; font-size: 1.2rem;">${content}</h3>`
+        });
+    
         text = text.replace(/## (.*?)(?:\n|$)/g, (_, content) => {
-            return `<h2 style="font-weight: 600; font-size: 1.5rem;">${content}</h2>`;
-        })
-
+            return `<h2 style="font-weight: 600; font-size: 1.5rem;">${content}</h2>`
+        });
+    
         text = text.replace(/# (.*?)(?:\n|$)/g, (_, content) => {
-            return `<h1 style="font-weight: 600; font-size: 2rem;">${content}</h1>`;
-        })
+            return `<h1 style="font-weight: 600; font-size: 2rem;">${content}</h1>`
+        });
+    
+        text = text.replace(/~~(.*?)~~/g, '<s>$1</s>')
+    
+        text = text.replace(/```([^`]+)```/g, '<div style="background-color: #f6f8fa;border:1px solid #d0d7de; padding: 5px; border-radius: 10px"><code>$1</code></div>')
+    
         text = text.replace(/\n/g, '<br>')
-
+    
         return text
     }
 
     
     
     function handleInputChange1(event: React.ChangeEvent<HTMLTextAreaElement>) {
-        const text = event.target.value;
-        setInput1(text);
-        setInput2(TransformList(text));
+        const text = event.target.value
+        setInput1(text)
+        setInput2(TransformList(text))
     }
 
 
