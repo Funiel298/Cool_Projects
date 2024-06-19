@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/calculator/page.jsx", "src/app/weather/page.tsx", "src/app/page.jsx", "src/app/pomodoro/page.tsx", "src/Components/WeatherComponents/SearchCity.jsx", "src/Components/PomodoroComponents/LeftSideBar.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/calculator/page.jsx", "src/app/weather/page.tsx", "src/app/page.jsx", "src/app/pomodoro/page.jsx", "src/Components/WeatherComponents/SearchCity.jsx", "src/Components/PomodoroComponents/LeftSideBar.tsx"],
   "exclude": ["node_modules"]
 }

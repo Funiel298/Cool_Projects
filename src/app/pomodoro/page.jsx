@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react" 
 import { motion } from "framer-motion" 
 import LeftBar from "@/Components/PomodoroComponents/LeftSideBar" 
-import { alarm } from "../../../public/ringtone.mp3" 
 import { CiCircleChevRight } from 'react-icons/ci' 
 import { MdRestartAlt } from "react-icons/md" 
 
@@ -16,7 +15,7 @@ export default function Pomodoro(){
   const [isMenuVisible, setIsMenuVisible] = useState(true)
   const [todos, setTodos] = useState([]);
 
-  const addTodo = (todo:string) => {
+  const addTodo = (todo) => {
     setTodos([...todos, todo]);
   };
 
@@ -25,7 +24,7 @@ export default function Pomodoro(){
   } 
 
   useEffect(() => {
-    let interval: any
+    let interval
     if (isTimerRunning) {
       interval = setInterval(() => {
         if (mode === 'Pomodoro') {
@@ -48,7 +47,7 @@ export default function Pomodoro(){
       }, 1000)
     }
 
-    return () => clearInterval(interval) // Clean up the interval on unmount
+    return () => clearInterval(interval) 
   }, [isTimerRunning, mode])
 
   
@@ -64,7 +63,7 @@ export default function Pomodoro(){
     setBreakTimer(300) 
   }
 
-  const handleTabClick = (selectedMode: 'Pomodoro' | 'Break') => {
+  const handleTabClick = (selectedMode) => {
     if (selectedMode !== mode) {
       handleRestart()
       setMode(selectedMode);
@@ -72,7 +71,6 @@ export default function Pomodoro(){
   };
 
   function handleTimerCompletion() {
-    new Audio(alarm).play() 
     alert('Your time is ready') 
     setIsTimerRunning(false) 
 
@@ -87,15 +85,14 @@ export default function Pomodoro(){
     }
   }
 
-  const handleDeleteTodo = (index: number) => {
+  const handleDeleteTodo = (index) => {
     const updatedTodos = [...todos];
     updatedTodos.splice(index, 1);
     setTodos(updatedTodos);
   };
 
-  const handleToggleComplete = (index: number) => {
+  const handleToggleComplete = (index) => {
     const updatedTodos = [...todos];
-    // Toggle the completion status for the selected task
     updatedTodos[index] = { ...updatedTodos[index], completed: !updatedTodos[index].completed };
     setTodos(updatedTodos);
   };
